@@ -1,10 +1,10 @@
-from datasets import load_dataset
+from datasets import load_dataset, load_from_disk
 from transformers import BartTokenizer, BartForConditionalGeneration, Seq2SeqTrainingArguments, Seq2SeqTrainer, DataCollatorForSeq2Seq
 import numpy as np
 import torch
 
 # Load the dataset
-dataset = load_dataset('menghor/navigation_robotic_instruct')
+dataset = load_from_disk('modified_set')
 
 # Print dataset info
 print("Dataset info:", dataset)

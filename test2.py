@@ -1,8 +1,17 @@
 from transformers import BartTokenizer, BartForConditionalGeneration
 import torch
 
-# Load the trained model and tokenizer
-model_path = './trained_model'  # Ensure this is the correct path to your saved model
+# Default speed and distance is 1 meter/sec and 1 meter.
+# Default rotation is 90 degrees in any direction on a 2d, horizontal plane, with angular velocity of 90.
+# Default direction of roation will be clockwise.
+# Deploying this model requires different code from simulation to deal with specific degree rotation.
+# Delete all rows with keywords: up, rise, propel, climb, ascend, down, downward, downwards, go to, take, snap, capture, photo, shoot, water
+#   drink, take, hydrate, robot, RosGPT, bedroom, room
+# Add in sequences (will be longer)
+# Issue: long responses will be cut off, sequences will most likely be cut off.
+# Issue: default distance appears to have changed to 2 meters for some reason.
+
+model_path = './trained_model'  
 tokenizer = BartTokenizer.from_pretrained(model_path)
 model = BartForConditionalGeneration.from_pretrained(model_path)
 
