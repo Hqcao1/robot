@@ -26,9 +26,7 @@ dataset = dataset.filter(filter_function)
 
 #
 # Make default commands
-# # # # # 
-
-print(dataset['train'])
+#
 
 # Upward movement
 list1 = [
@@ -178,13 +176,9 @@ list5 = [
     {'INPUT' : 'swing counterclockwise', 'OUTPUT': '{ "action": "rotate", "params": { "angular_velocity": 90, "angle": 90, "is_clockwise": false, "unit": "degrees" } }'}
 ]
 
-# # # # #
-# End of default commands
-#
-
 #
 # Make upward and downward commands with measurements
-# # # # #
+#
 
 # Upwards by 1 meter
 list6 = [
@@ -762,10 +756,6 @@ dataset['train'] = concatenate_datasets([dataset['train'], new_set])
 
 last_item = dataset['train'][-1]
 print(dataset['train'])
-
-# # # # #
-# End of upwards and downwards commands
-#
 
 # Save the modified dataset
 dataset.save_to_disk('modified_set')
